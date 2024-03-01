@@ -1,0 +1,8 @@
+{
+  "nodemonConfig": {
+    "exec": "ts-node --loader ts-node/esm -r tsconfig-paths/register",
+    "watch": ["src"],
+    "ignore": ["src/**/*.spec.ts", "src/**/*.json", "src/**/*.test.ts"],
+    "ext": "ts"
+  }
+}
