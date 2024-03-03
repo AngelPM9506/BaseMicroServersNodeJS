@@ -7,9 +7,10 @@
   "scripts": {
     "build": "node scripts/build.js",
     "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
-    "start:build": "cross-env NODE_ENV=production node build/src/index.js",
+    "start:build": "npm run build && npm run start-app",
     "prestart": "npm run build",
-    "start": "cross-env NODE_ENV=production nodemon --exec node build/src/index.js",
+    "start-app": "cross-env NODE_ENV=production node -r module-alias/register build/src/index.js",
+    "start": "npm run start-app",
     "test": "jest"
   },
   "keywords": [
