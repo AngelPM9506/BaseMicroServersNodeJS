@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import ServerApp from "./Server";
+import defaultFunctions from "@Utils/defaultFunctions";
 dotenv.config();
 
 const { PORT, HOST, NODE_ENV } = process.env;
@@ -11,7 +12,7 @@ const server: ServerApp = new ServerApp({
 
 const startingServer = server.startServer({
   host: HOST,
-  callback: undefined,
+  callback: () => defaultFunctions(server),
 });
 
 export default startingServer;
